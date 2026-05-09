@@ -1,74 +1,108 @@
-# 💻 Network Simulations Labs
+# 🌐 Static Routing Basic
 
-Repositorio dedicado a laboratorios prácticos de redes y routing, orientados a la simulación profesional, configuración de protocolos dinámicos y validación de conectividad en entornos realistas.
+Repositorio dedicado a un laboratorio práctico de **routing estático en Cisco Packet Tracer**, orientado al aprendizaje de conectividad entre múltiples redes mediante routers Cisco.
 
-El objetivo de este repositorio es desarrollar habilidades técnicas propias de perfiles de:
+Este laboratorio simula un entorno real de infraestructura de red donde diferentes subredes necesitan comunicarse utilizando rutas estátcas configuradas manualmente.
 
-Ingenieros de redes (Network Engineer)
+## 🎯 Objetivos del laboratorio
 
-Administradores de sistemas y networking
+- Configurar múltiples routers Cisco
 
-Especialistas en infraestructura IT
+- Implementar direccionamiento IP
 
-Perfiles junior de networking y simulación profesional
+- Configurar rutas estáticas
 
----
+- Verificar conectividad entre redes
 
-## 🎯 Objetivos del repositorio
+- Analizar tablas de routing
 
-- Desarrollar competencias prácticas en routing dinámico y protocolos de red (OSPF, EIGRP, RIP, etc.)
+- Realizar troubleshooting básico
 
-- Simular escenarios reales de topologías multi-router y LANs
+- Simular operaciones reales de networking
 
-- Implementar protocolos de enrutamiento dinámico y vecindades OSPF
+## 📁 Estructura del laboratorio
 
-- Validar conectividad extremo a extremo entre dispositivos finales
+```
+static-routing-basic/
+├── topology.pkt
+├── configs/
+└── README.md
+```
 
-- Analizar tablas de rutas y convergencia de protocolos
+## 🧠 Topología del laboratorio
 
-- Practicar troubleshooting de redes profesionales
+El laboratorio utiliza:
 
-- Documentar procedimientos técnicos y resultados de laboratorio
+- 2 routers Cisco
+- 2 switches
+- 2 redes LAN
+- Hosts finales conectados a cada red
 
----
+**Ejemplo de direccionamiento**
 
-## 🔜 Líneas de trabajo
+| Dispositivo | Interfaz | Direccionamiento IP |
+|-------------|----------|---------------------|
+| Router 1    | G0/0   | 192.168.1.1/24    |
+| Router 1    | G0/1   | 10.0.0.1/30    |
+| Router 2    | G0/0   | 192.168.2.1/24 |
+| Router 2    | G0/1   | 10.0.0.2/30 |
+| PC1         | NIC    | 192.168.1.10|
+| PC2         | NIC    | 192.168.2.10
 
-Este repositorio se centra en el desarrollo de prácticas relacionadas con:
+# 🔧 Configuración básica
 
-- Implementación de protocolos de routing dinámico (OSPF, RIP, EIGRP)
+Las configuraciones se encuentran disponibles en:
 
-- Configuración de enlaces punto a punto y LANs
+- Router 1: [ver aquí](./conf/router1.conf)
+- Router 2: [ver aquí](./conf/router2.conf)
 
-- Validación de conectividad entre routers y dispositivos finales
+# ▶️ Verificación
 
-- Observación de convergencia y propagación de rutas
+Comandos empleados:
 
-- Troubleshooting profesional de redes
+```
+show ip route
+show ip interface brief
+ping 192.168.2.10
+```
 
-- Simulación de infraestructuras de red realistas
+# 🧪 Validaciones realizadas
 
-- Documentación de resultados y procedimientos de laboratorio
+- Conectividad entre routers
+- Comunicación entre PCs de distintas redes
+- Verificación de rutas estáticas
+- Estado operativo de interfaces
+- Diagnóstico básico de conectividad
 
----
+# 🔍 Troubleshooting básico
 
-## 🧠 Enfoque
+Problemas simulados:
 
-Este repositorio está orientado a:
+- Interfaces apagadas
+- Gateway incorrecto
+- Ruta estática ausente
+- Máscara de red incorrecta
 
-- Aprendizaje práctico y reproducible en simuladores de red
+Diagnóstico realizado mediante:
 
-- Escenarios reales de infraestructura y topologías multi-router
+- ping
+- show ip route
+- show running-config
+- show ip interface brief
 
-- Dominio de routing dinámico y validación de conectividad
+# 🧠 Enfoque
 
-- Preparación profesional para roles de ingeniería de redes
+Este laboratorio está orientado a:
 
-- Simulación de redes enterprise y troubleshooting avanzado
+- Networking práctico
+- Routing básico
+- Operaciones NOC
+- Troubleshooting de red
+- Infraestructura Cisco
+- Aprendizaje reproducible
 
-No se centra en teoría, sino en **práctica aplicada, ejecutable y documentada profesionalmente**.
+No se centra únicamente en teoría, sino en configuración y validación práctica.
 
---- 
 ## 👤 Autor
 
 Manuel Míguez Liméns
